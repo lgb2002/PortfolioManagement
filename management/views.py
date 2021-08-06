@@ -4,10 +4,10 @@ from django.utils import timezone
 from .models import *
 
 def post_list(request):
-	introduce = Introduce1.objects.all()[0]
-	banner = Introduce2.objects.all()[0]
+	introduce1 = Introduce1.objects.all()[0]
+	introduce2 = Introduce2.objects.all()[0]
 	#print(banner)
-	return render(request, 'management/post_list.html', {'introduce':introduce1, 'banner':introduce2})
+	return render(request, 'management/post_list.html', {'introduce1':introduce1, 'introduce2':introduce2})
 
 def contact(request):
 	return render(request, 'management/contact.html', {})
