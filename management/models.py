@@ -20,7 +20,7 @@ class Banner(models.Model):
 	title = models.CharField(max_length=400, blank=False, default="제목")
 	contents1 = models.TextField(blank = True)
 	contents2 = models.TextField(blank = True)
-	image = models.FileField(default = "static/management/image/fruit.jpg")
+	image = models.FileField(default = "image/fruit.jpg")
 
 	def __str__(self):
 		return self.title
@@ -29,10 +29,10 @@ class Introduce(models.Model):
 	title_big = models.CharField(max_length=400, blank=False, default="제목")
 	title_small1 = models.CharField(max_length=400, blank=False, default="test title1")
 	contents1 = models.TextField(blank=True)
-	image1 = models.FileField(default = "static/management/image/orange.svg")
+	image1 = models.FileField(default = "image/orange.svg")
 	title_small2 = models.CharField(max_length=400, blank=False, default="test title2")
 	contents2 = models.TextField(blank=True)
-	image2 = models.FileField(default = "static/management/image/orange.svg")
+	image2 = models.FileField(default = "image/orange.svg")
 
 	def __str__(self):
 		return self.title_big
