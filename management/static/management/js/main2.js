@@ -77,10 +77,10 @@ BRUSHED.slider = function(){
 		thumb_links				:	0,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-											{image : 'media/image01.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
-											{image : 'media/image02.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
-											{image : 'media/image03.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
-											{image : 'media/image04.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''}  
+											{image : '../media/image01.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
+											{image : '../media/image02.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
+											{image : '../media/image03.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''},
+											{image : '../media/image04.jpg', title : '<div class="slide-content">포트폴리오</div>', thumb : '', url : ''}  
 									],
 									
 		// Theme Options			   
