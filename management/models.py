@@ -20,7 +20,7 @@ class Banner(models.Model):
 	title = models.CharField(max_length=400, blank=False, default="제목")
 	contents1 = models.TextField(blank = True)
 	contents2 = models.TextField(blank = True)
-	image = models.FileField(default = "image/fruit.jpg")
+	image = models.FileField(default = "fruit.jpg")
 
 	def __str__(self):
 		return self.title
@@ -29,16 +29,16 @@ class Introduce(models.Model):
 	title_big = models.CharField(max_length=400, blank=False, default="제목")
 	title_small1 = models.CharField(max_length=400, blank=False, default="test title1")
 	contents1 = models.TextField(blank=True)
-	image1 = models.FileField(default = "image/orange.svg")
+	image1 = models.FileField(default = "orange.svg")
 	title_small2 = models.CharField(max_length=400, blank=False, default="test title2")
 	contents2 = models.TextField(blank=True)
-	image2 = models.FileField(default = "image/orange.svg")
+	image2 = models.FileField(default = "orange.svg")
 
 	def __str__(self):
 		return self.title_big
 
 class Portfolio(models.Model):
-	video_contents = models.FileField(default='video/test.mp4')
+	video_contents = models.FileField(default='test.mp4')
 	descriptions = models.TextField(blank=True, null=True)
 	submitted_time = models.DateTimeField(default=timezone.now)
 	coworker_name = models.ForeignKey(Coworker, on_delete=models.CASCADE, blank=True, null=True)
