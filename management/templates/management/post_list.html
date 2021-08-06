@@ -6,14 +6,14 @@
     <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <!--Left Col-->
       <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-        {% if banner.contents1 %}
-        <p class="uppercase tracking-loose w-full">{{ banner.contents1 }}</p>
+        {% if introduce1.contents1 %}
+        <p class="uppercase tracking-loose w-full">{{ introduce1.contents1 }}</p>
         {% endif %}
         <h1 class="my-4 text-5xl font-bold leading-tight">
-          {{ banner.title }}
+          {{ introduce1.title }}
         </h1>
         <p class="leading-normal text-2xl mb-8">
-          {{ banner.contents2 }}
+          {{ introduce1.contents2 }}
         </p>
         <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" onclick = "location.href = 'contact' ">
           Contact.us
@@ -47,7 +47,7 @@
   <section class="bg-white border-b py-8">
     <div class="container max-w-5xl mx-auto m-8">
       <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-        {{ introduce.title_big }}
+        {{ introduce2.title_big }}
       </h1>
       <div class="w-full mb-4">
         <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -55,45 +55,45 @@
       <div class="flex flex-wrap">
         <div class="w-5/6 sm:w-1/2 p-6">
           <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-            {{ introduce.title_small1 }}
+            {{ introduce2.title_small1 }}
           </h3>
           <p class="text-gray-600 mb-8">
-            {{ introduce.contents1 }}
+            {{ introduce2.contents1 }}
             <br />
             <br />
 
-            {% if introduce.image1 %}
+            {% if introduce2.image1 %}
             Images from:
 
-            <a class="text-pink-500 underline" href="{{ introduce.image1.url }}">{{ introduce.image1.url }}{{ introduce.image1.path }}</a>
+            <a class="text-pink-500 underline" href="{{ introduce2.image1.url }}">{{ introduce2.image1.url }}{{ introduce2.image1.path }}</a>
             {% endif %}
           </p>
         </div>
-        {% if introduce.image1 %}
+        {% if introduce2.image1 %}
         <div class="w-full sm:w-1/2 p-6">
-        	<img class="w-full sm:h-64 mx-auto" viewBox="0 0 1177 598.5" src="{{ introduce.image1.url }}" alt="test1">
+        	<img class="w-full sm:h-64 mx-auto" viewBox="0 0 1177 598.5" src="{{ introduce2.image1.url }}" alt="test1">
         </div>
         {% endif %}
       </div>
       <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-        {% if introduce.image2 %}
+        {% if introduce2.image2 %}
         <div class="w-full sm:w-1/2 p-6 mt-6">
-          <img class="w-5/6 sm:h-64 mx-auto" viewBox="0 0 1176.60617 873.97852" src="{{ introduce.image2.url }}" alt="test2">
+          <img class="w-5/6 sm:h-64 mx-auto" viewBox="0 0 1176.60617 873.97852" src="{{ introduce2.image2.url }}" alt="test2">
         </div>
         {% endif %}
         <div class="w-full sm:w-1/2 p-6 mt-6">
           <div class="align-middle">
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-              {{ introduce.title_small2 }}
+              {{ introduce2.title_small2 }}
             </h3>
             <p class="text-gray-600 mb-8">
-              {{ introduce.contents2 }}
+              {{ introduce2.contents2 }}
               <br />
               <br />
-              {% if introduce.image2 %}
+              {% if introduce2.image2 %}
               Images from:
 
-              <a class="text-pink-500 underline" href="{{ introduce.image2.url }}">{{ introduce.image2.url }}</a>
+              <a class="text-pink-500 underline" href="{{ introduce2.image2.url }}">{{ introduce2.image2.url }}</a>
               {% endif %}
             </p>
           </div>

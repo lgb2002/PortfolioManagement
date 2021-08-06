@@ -16,7 +16,7 @@ class Coworker(models.Model):
 	def __str__(self):
 		return self.name
 
-class Banner(models.Model):
+class Introduce1(models.Model):
 	title = models.CharField(max_length=400, blank=False, default="제목")
 	contents1 = models.TextField(blank = True)
 	contents2 = models.TextField(blank = True)
@@ -25,7 +25,7 @@ class Banner(models.Model):
 	def __str__(self):
 		return self.title
 
-class Introduce(models.Model):
+class Introduce2(models.Model):
 	title_big = models.CharField(max_length=400, blank=False, default="제목")
 	title_small1 = models.CharField(max_length=400, blank=False, default="test title1")
 	contents1 = models.TextField(blank=True)
