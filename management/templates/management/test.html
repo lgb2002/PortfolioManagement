@@ -1,0 +1,85 @@
+{% extends 'management/base2.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'management/css/contact.css' %}">
+
+<div class="container" id="container2">
+  <form novalidate>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="firstname" type="text" class="form-field__input" placeholder=" " />
+            <label for="firstname" class="form-field__label">First name</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="lastname" type="text" class="form-field__input" placeholder=" " />
+            <label for="lastname"class="form-field__label">Last name</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="email" type="email" class="form-field__input" placeholder=" " />
+            <label for="email" class="form-field__label">Email</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="street" type="text" class="form-field__input" placeholder=" " />
+            <label for="street"class="form-field__label">Street address</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="zip" type="text" class="form-field__input" placeholder=" " />
+            <label for="zip"class="form-field__label">Zip code</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <input id="city" type="text" class="form-field__input" placeholder=" " />
+            <label for="city"class="form-field__label">City</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-field">
+          <div class="form-field__control">
+            <textarea id="additionalInfo" class="form-field__textarea" placeholder=" "></textarea>
+            <label for="additionalInfo" class="form-field__label">Additional info</label>
+            <div class="form-field__bar"></div>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

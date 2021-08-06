@@ -1,0 +1,96 @@
+{% extends 'management/base2.html' %}
+{% load static %}
+{% block content %}
+<div id="learn" class="page">
+    <div class="container">
+        <!-- Title Page -->
+        <div class="row">
+            <div class="span12">
+                <div class="title-page">
+                    <h2 class="title">포트폴리오 전시관!</h2>
+                    <h3 class="title-description"><a href="#">홈페이지에서</a> 포트폴리오를 구경하세요!</a>.</h3>
+                </div>
+            </div>
+        </div>
+        <!-- End Title Page -->
+        
+        <!-- Portfolio Projects -->
+        <div class="row">
+            <div class="span3">
+                <!-- Filter -->
+                <nav id="options" class="work-nav">
+                    <ul id="filters" class="option-set" data-option-key="filter">
+                        <li class="type-work">언어별 강좌</li>
+                        <li><a href="#filter" data-option-value="*" class="selected">전체 협업자</a></li>
+                        {% for coworker in coworkers %}
+                        <li><a href="#filter" data-option-value=".{{ coworker.name }}">{{ coworker.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                <!-- End Filter -->
+            </div>
+            
+            <div class="span9">
+                <div class="row">
+                    <section id="projects">
+                        {% for post in posts %}
+                        <ul id="thumbs">
+                            <li class="item-thumbs span3 {{ post.coworker_name }}">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox" id='{{ post.coworker_name }}' test1="{{ post.coworker_name }}" test2="{{ post.submitted_time }}" data-fancybox-group="gallery" title='' href='{{ post.video_contents.url }}' > <!--{% static "_include/img/logo3.jpg"%}-->
+                                    <span class="overlay-img"></span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img src='{% static "management/image/orange.svg" %}' alt=''>
+                                <!--<source src="{{ post.video_contents.url }}" type="video/mp4">-->
+                                <div class="{{ post.coworker_name }}">
+                                    
+                                </div>
+                                <div class="title">
+                                    <strong>담당자: {{ post.coworker_name }} 수정된 시간: {{ post.submitted_time }}</strong>
+                                </div>
+                                <div class="description">
+                                    <p>설명: {{ post.descriptions }} {{ post.video_contents.url }}</p>
+                                </div>
+                            </li>
+                            <!-- End Item Project -->
+                        <script type="text/javascript">
+                          /*
+                            function replaceAll(str, searchStr, replaceStr) {
+                                return str.split(searchStr).join(replaceStr);
+                            }
+                            function ConvertSystemSourcetoHtml(str){
+                                str = str.replace(/</g,"&lt;");
+                                str = str.replace(/>/g,"&gt;");
+                                str = str.replace(/\"/g,"&quot;");
+                                str = str.replace(/\'/g,"&#39;");
+                                str = str.replace(/\n/g,"<br />");
+                                return str;
+                            }
+                            var test = document.getElementById('{{ post.id }}');
+                            code = "{{ post.code }}";
+                            context= "{{ post.context }}";
+                            code = replaceAll(code,"\n","\\n");
+                            code = replaceAll(code,"..","\n");
+                            code = ConvertSystemSourcetoHtml(code);
+                            context = replaceAll(context,"\n","\\n");
+                            context = replaceAll(context,"..","\n");
+                            context = ConvertSystemSourcetoHtml(context);
+                            str = "<div>{{ post.title }}</div><pre>code: "+code+" </pre><pre>context: "+context+" </pre><div class='button'><a type='submit' href='#coderun' onclick='go({{post.id}})'>Run</a></div>";
+                            test.title = str;
+                            */
+                        </script>
+                        </ul>
+                        {% endfor %}
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- End Portfolio Projects -->
+    </div>
+</div> 
+{% endblock %}
+
+
+</html>
