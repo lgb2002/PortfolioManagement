@@ -16,6 +16,15 @@ class Coworker(models.Model):
 	def __str__(self):
 		return self.name
 
+class Banner(models.Model):
+	image1 = models.FileField(default = "image/image01.jpg")
+	image2 = models.FileField(default = "image/image02.jpg")
+	image3 = models.FileField(default = "image/image03.jpg")
+	image4 = models.FileField(default = "image/image04.jpg")
+
+	def __str__(self):
+		return str(self.image1.url)
+
 class Introduce1(models.Model):
 	title = models.CharField(max_length=400, blank=False, default="제목")
 	contents1 = models.TextField(blank = True)
