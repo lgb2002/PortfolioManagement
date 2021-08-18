@@ -29,13 +29,15 @@ def portfolio(request):
 
 def post_contact(request):
 	if request.method == "POST":
-		title = request.POST['title']
+		#title = request.POST['title']
+		budget = request.POST['budget']
 		contents = request.POST['contents']
 		company = request.POST['company']
 		phone_number = request.POST['phone_number']
 		email = request.POST['email']
-		file = request.FILES['file']
-		post_request = Request(title=title, contents=contents, company=company, phone_number=phone_number, email=email, video_contents=file)
+		#file = request.FILES['file']
+		#post_request = Request(title=title, contents=contents, company=company, phone_number=phone_number, email=email, video_contents=file)
+		post_request = Request(budget=budget, contents=contents, company=company, phone_number=phone_number, email=email)
 		post_request.save()
 		return HttpResponseRedirect('/')
 	else:

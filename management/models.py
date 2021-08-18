@@ -57,11 +57,12 @@ class Portfolio(models.Model):
 
 class Request(models.Model):
 	#author = model.ForeignKey(settings.AUTH_USER_MODEL, on_delete=moels.CASCADE)
-	video_contents = models.FileField(null=True, blank=True)
-	title = models.CharField(max_length=400, blank=False, default="test title")
+	#video_contents = models.FileField(null=True, blank=True)
+	#title = models.CharField(max_length=400, blank=False, default="test title")
 	contents = models.TextField(blank=False)
 	submitted_time = models.DateTimeField(default=timezone.now)
 	company = models.CharField(max_length=400, blank=False)
+	budget = models.TextField(blank=True)
 	coworker_name = models.ForeignKey(Coworker, on_delete=models.CASCADE, blank=True, null=True)
 	phone_number = models.CharField(max_length=13, blank=False, default="XXX-XXXX-XXXX")
 	email = models.CharField(max_length=100, blank=False, default="xxx@xxx.xxx")
