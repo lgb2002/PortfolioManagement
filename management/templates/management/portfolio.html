@@ -1,7 +1,7 @@
 {% extends 'management/base2.html' %}
 {% load static %}
 {% block content %}
-<div id="learn" class="page">
+<div id="learn" class="page" style="overflow-x:hidden;">
 
     <!-- End Title Page -->
 
@@ -67,8 +67,13 @@
 </div>
 </div>
 {% else %}
-<div class="container max-w-5xl mx-auto m-8">
-<h1>로그인해야 볼 수 있습니다.</h1>
+
+<div class="pt-24">
+<div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+<section class="container mx-auto text-center py-6 mb-12">
+  <h3 class="my-4 text-3xl leading-tight">로그인해야 볼 수 있습니다.</h3>
+</section>
+</div>
 </div>
 {% endif %}
 </div>
