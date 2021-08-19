@@ -32,10 +32,9 @@
             </nav>
             <!-- End Filter -->
         </div>
-        </div>
         <section id="projects" class="w-full sm:w-1/2 p-6">
         {% for post in posts %}
-        <ul id="thumbs ">
+        <ul id="thumbs">
             <li class="item-thumbs span2 {{ post.coworker_name }}">
                 <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                 <a class="hover-wrap fancybox" id='{{ post.coworker_name }}' test1="{{ post.coworker_name }}" test2="{{ post.submitted_time }}" data-fancybox-group="gallery" title='' href='{{ post.video_contents.url }}' > <!--{% static "_include/img/logo3.jpg"%}-->
@@ -58,10 +57,11 @@
             <!-- End Item Project -->
         </ul>
         {% endfor %}
-    </section>
-    <!-- End Portfolio Projects -->
+        </section>
     </div>
+    <!-- End Portfolio Projects -->
         
+</div>
 </div>
 </div>
 {% endblock %}
