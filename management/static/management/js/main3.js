@@ -66,11 +66,11 @@ BRUSHED.slider = function(){
 		// Size & Position						   
 		min_width		        :   0,			// Min width allowed (in pixels)
 		min_height		        :   0,			// Min height allowed (in pixels)
-		vertical_center         :   1,			// Vertically center background
-		horizontal_center       :   1,			// Horizontally center background
+		vertical_center         :   0,			// Vertically center background
+		horizontal_center       :   0,			// Horizontally center background
 		fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-		fit_portrait         	:   1,			// Portrait images will not exceed browser height
-		fit_landscape			:   0,			// Landscape images will not exceed browser width
+		fit_portrait         	:   0,			// Portrait images will not exceed browser height
+		fit_landscape			:   1,			// Landscape images will not exceed browser width
 												   
 		// Components							
 		slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
@@ -153,7 +153,6 @@ BRUSHED.filter = function (){
 	}
 }
 
-
 /* ==================================================
    FancyBox
 ================================================== */
@@ -217,33 +216,6 @@ BRUSHED.contactForm = function(){
    Twitter Feed
 ================================================== */
 
-BRUSHED.tweetFeed = function(){
-	
-	var valueTop = -64; // Margin Top Value
-	
-    $("#ticker").tweet({
-          modpath: '_include/js/twitter/',
-          username: "Bluxart", // Change this with YOUR ID
-          page: 1,
-          avatar_size: 0,
-          count: 10,
-		  template: "{text}{time}",
-		  filter: function(t){ return ! /^@\w+/.test(t.tweet_raw_text); },
-          loading_text: "loading ..."
-	}).bind("loaded", function() {
-	  var ul = $(this).find(".tweet_list");
-	  var ticker = function() {
-		setTimeout(function() {
-			ul.find('li:first').animate( {marginTop: valueTop + 'px'}, 500, 'linear', function() {
-				$(this).detach().appendTo(ul).removeAttr('style');
-			});	
-		  ticker();
-		}, 5000);
-	  };
-	  ticker();
-	});
-	
-}
 
 
 /* ==================================================
@@ -439,7 +411,6 @@ $(document).ready(function(){
 	BRUSHED.filter();
 	BRUSHED.fancyBox();
 	BRUSHED.contactForm();
-	BRUSHED.tweetFeed();
 	BRUSHED.scrollToTop();
 	BRUSHED.utils();
 	BRUSHED.accordion();

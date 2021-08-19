@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
 <div class="page">
-  <div class="container" id="input-contact">
+  <div class="pt-24">
+    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="input-contact">
+      <div class="flex flex-col w-full md:w-2/5 justify-center items-start md:text-left">
 
     
-    <h2>의뢰 작성</h2>
-    <h5><small>의뢰 사항을 양식에 맞게 빠짐없이 작성하십시오. 누락된 항목이 있을 경우 정상적인 의뢰 요청이 이루어지지 않을 수 있습니다.</small></h5>
+    <h1 class="my-4 text-5xl font-bold leading-tight">의뢰 작성</h1>
+    <h5 class="leading-normal mb-8"><small>의뢰 사항을 양식에 맞게 빠짐없이 작성하십시오. 누락된 항목이 있을 경우 정상적인 의뢰 요청이 이루어지지 않을 수 있습니다.</small></h5>
     
  
     <form action="post_contact" method="POST" enctype="multipart/form-data">
@@ -63,7 +65,8 @@
         제출
       </button>
     </form>
-    
+    </div>
+    </div>
   </div>
 </div>
 {% endblock %}

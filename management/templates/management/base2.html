@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
 
     <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'management/css/contact4.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'management/css/contact5.css' %}">
     <link href='{% static "management/css/main9.css" %}' rel="stylesheet">
 
     <!-- Supersized -->
@@ -31,6 +31,7 @@
       .gradient {
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
       }
+      #supersized img { width:auto; height:inherit !important; position:relative; display:none; outline:none; border:none; }
     </style>
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif; overflow-x:hidden; word-wrap: break-word;" >
@@ -159,13 +160,13 @@
     </footer>
     <!-- End Homepage Slider -->
   <!-- Js -->
+  <script src='{% static "management/js/placeholder.js" %}'></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
 
   <script src='{% static "management/js/supersized.3.2.7.min.js" %}'></script> <!-- Slider -->
 
   <script src='{% static "management/js/plugins.js" %}'></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
 
-  <script src='{% static "management/js/main3.js" %}'></script> <!-- Default JS --> 
 
   <script src='{% static "management/js/modernizr.js" %}'></script>
 
@@ -173,6 +174,8 @@
   <script src='{% static "management/js/waypoints.js" %}'></script> <!-- WayPoints -->
   <script src='{% static "management/js/waypoints-sticky.js" %}'></script> <!-- Waypoints for Header -->
   <script src='{% static "management/js/jquery.isotope.js" %}'></script> <!-- Isotope Filter --> 
+  <script src='{% static "management/js/main3.js" %}'></script> <!-- Default JS -->
+  <script src='{% static "management/js/placeholders.js" %}'></script> 
   <script>
     var scrollpos = window.scrollY;
     var header = document.getElementById("header");

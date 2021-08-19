@@ -2,94 +2,95 @@
 {% load static %}
 {% block content %}
 <div id="learn" class="page">
-    <div class="container">
-        <!-- Title Page -->
-        <div class="row">
-            <div class="span12">
-                <div class="title-page">
-                    <h2 class="title" style="text-align: start;">포트폴리오 전시관!</h2>
-                </div>
-            </div>
+<div class="pt-24">
+<div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <!--Left Col-->
+    <div class="flex flex-col w-full md:w-4/5 justify-center items-start md:text-left">
+    <!-- Title Page -->
+        <div class="flex flex-wrap">
+        <h1 class="my-4 text-5xl font-bold leading-tight">포트폴리오 전시관!</h1>
         </div>
-        <!-- End Title Page -->
-        
-        <!-- Portfolio Projects -->
-        <div class="row">
-            <div class="span3">
-                <!-- Filter -->
-                <nav id="options" class="work-nav">
-                    <ul id="filters" class="option-set" data-option-key="filter">
-                        <li class="type-work">언어별 강좌</li>
-                        <li><a href="#filter" data-option-value="*" class="selected">전체 협업자</a></li>
-                        {% for coworker in coworkers %}
-                        <li><a href="#filter" data-option-value=".{{ coworker.name }}">{{ coworker.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-                <!-- End Filter -->
-            </div>
-            
-            <div class="span9">
-                <div class="row">
-                    <section id="projects">
-                        {% for post in posts %}
-                        <ul id="thumbs">
-                            <li class="item-thumbs span3 {{ post.coworker_name }}">
-                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                <a class="hover-wrap fancybox" id='{{ post.coworker_name }}' test1="{{ post.coworker_name }}" test2="{{ post.submitted_time }}" data-fancybox-group="gallery" title='' href='{{ post.video_contents.url }}' > <!--{% static "_include/img/logo3.jpg"%}-->
-                                    <span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <!-- Thumb Image and Description -->
-                                <img src='{% static "management/image/orange.svg" %}' alt=''>
-                                <!--<source src="{{ post.video_contents.url }}" type="video/mp4">-->
-                                <div class="{{ post.coworker_name }}">
-                                    
-                                </div>
-                                <div class="title">
-                                    <p style="color:#000;">담당자: {{ post.coworker_name }} 수정된 시간: {{ post.submitted_time }}</p>
-                                </div>
-                                <div class="description">
-                                    <p>설명: {{ post.descriptions }} {{ post.video_contents.url }}</p>
-                                </div>
-                            </li>
-                            <!-- End Item Project -->
-                        <script type="text/javascript">
-                          /*
-                            function replaceAll(str, searchStr, replaceStr) {
-                                return str.split(searchStr).join(replaceStr);
-                            }
-                            function ConvertSystemSourcetoHtml(str){
-                                str = str.replace(/</g,"&lt;");
-                                str = str.replace(/>/g,"&gt;");
-                                str = str.replace(/\"/g,"&quot;");
-                                str = str.replace(/\'/g,"&#39;");
-                                str = str.replace(/\n/g,"<br />");
-                                return str;
-                            }
-                            var test = document.getElementById('{{ post.id }}');
-                            code = "{{ post.code }}";
-                            context= "{{ post.context }}";
-                            code = replaceAll(code,"\n","\\n");
-                            code = replaceAll(code,"..","\n");
-                            code = ConvertSystemSourcetoHtml(code);
-                            context = replaceAll(context,"\n","\\n");
-                            context = replaceAll(context,"..","\n");
-                            context = ConvertSystemSourcetoHtml(context);
-                            str = "<div>{{ post.title }}</div><pre>code: "+code+" </pre><pre>context: "+context+" </pre><div class='button'><a type='submit' href='#coderun' onclick='go({{post.id}})'>Run</a></div>";
-                            test.title = str;
-                            */
-                        </script>
-                        </ul>
-                        {% endfor %}
-                    </section>
-                </div>
-            </div>
-        </div>
-        <!-- End Portfolio Projects -->
     </div>
-</div> 
+</div>
+</div>
+    <!-- End Title Page -->
+
+    <!-- Portfolio Projects -->
+<div class="container max-w-5xl mx-auto m-8">
+    <div class="row">
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+            <!-- Filter -->
+            <nav id="options" class="work-nav">
+                <ul id="filters" class="option-set" data-option-key="filter">
+                    <li class="type-work">언어별 강좌</li>
+                    <li><a href="#filter" data-option-value="*" class="selected my-4 text-5xl font-bold leading-tight">전체 협업자</a></li>
+                    {% for coworker in coworkers %}
+                    <li><a href="#filter" data-option-value=".{{ coworker.name }}" class="my-4 text-5xl font-bold leading-tight">{{ coworker.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <!-- End Filter -->
+        </div>
+        </div>
+        <section id="projects" class="w-full sm:w-1/2 p-6">
+        {% for post in posts %}
+        <ul id="thumbs ">
+            <li class="item-thumbs span2 {{ post.coworker_name }}">
+                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                <a class="hover-wrap fancybox" id='{{ post.coworker_name }}' test1="{{ post.coworker_name }}" test2="{{ post.submitted_time }}" data-fancybox-group="gallery" title='' href='{{ post.video_contents.url }}' > <!--{% static "_include/img/logo3.jpg"%}-->
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span>
+                </a>
+                <!-- Thumb Image and Description -->
+                <img src='{% static "management/image/orange.svg" %}' alt=''>
+                <!--<source src="{{ post.video_contents.url }}" type="video/mp4">-->
+                <div class="{{ post.coworker_name }}">
+                    
+                </div>
+                <div class="title">
+                    <p style="color:#000;">담당자: {{ post.coworker_name }} 수정된 시간: {{ post.submitted_time }}</p>
+                </div>
+                <div class="description">
+                    <p>설명: {{ post.descriptions }} {{ post.video_contents.url }}</p>
+                </div>
+            </li>
+            <!-- End Item Project -->
+        </ul>
+        {% endfor %}
+    </section>
+    <!-- End Portfolio Projects -->
+    </div>
+        
+</div>
+</div>
 {% endblock %}
 
 
+<script type="text/javascript">
+  /*
+    function replaceAll(str, searchStr, replaceStr) {
+        return str.split(searchStr).join(replaceStr);
+    }
+    function ConvertSystemSourcetoHtml(str){
+        str = str.replace(/</g,"&lt;");
+        str = str.replace(/>/g,"&gt;");
+        str = str.replace(/\"/g,"&quot;");
+        str = str.replace(/\'/g,"&#39;");
+        str = str.replace(/\n/g,"<br />");
+        return str;
+    }
+    var test = document.getElementById('{{ post.id }}');
+    code = "{{ post.code }}";
+    context= "{{ post.context }}";
+    code = replaceAll(code,"\n","\\n");
+    code = replaceAll(code,"..","\n");
+    code = ConvertSystemSourcetoHtml(code);
+    context = replaceAll(context,"\n","\\n");
+    context = replaceAll(context,"..","\n");
+    context = ConvertSystemSourcetoHtml(context);
+    str = "<div>{{ post.title }}</div><pre>code: "+code+" </pre><pre>context: "+context+" </pre><div class='button'><a type='submit' href='#coderun' onclick='go({{post.id}})'>Run</a></div>";
+    test.title = str;
+    */
+</script>
 </html>
