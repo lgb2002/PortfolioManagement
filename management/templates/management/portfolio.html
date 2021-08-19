@@ -2,6 +2,12 @@
 {% load static %}
 {% block content %}
 <div id="learn" class="page">
+
+    <!-- End Title Page -->
+
+    <!-- Portfolio Projects -->
+
+{% if user.is_authenticated %}
 <div class="pt-24">
 <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
     <!--Left Col-->
@@ -13,9 +19,6 @@
     </div>
 </div>
 </div>
-    <!-- End Title Page -->
-
-    <!-- Portfolio Projects -->
 <div class="container max-w-5xl mx-auto m-8">
     <div class="row">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
@@ -63,6 +66,11 @@
         
 </div>
 </div>
+{% else %}
+<div class="container max-w-5xl mx-auto m-8 text-center">
+<h1>로그인해야 볼 수 있습니다.</h1>
+</div>
+{% endif %}
 </div>
 {% endblock %}
 
