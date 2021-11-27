@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.utils import timezone
 from .models import *
 
@@ -17,6 +17,7 @@ def send(request):
 		devid = request.GET["devid"]
 		time = request.GET["time"]
 		print("time : "+str(time))
+		return HttpResponse("success")
 	else:
 		return render(request, 'management/data.html')
 
