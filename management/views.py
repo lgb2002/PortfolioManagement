@@ -12,22 +12,16 @@ def post_list(request):
 def contact(request):
 	return render(request, 'management/contact.html', {})
 
-def data(request):
-	if request.method == "POST":
-		print(request.POST)
-		#title = request.POST['title']
-		budget = request.POST['budget']
-		contents = request.POST['contents']
-		company = request.POST['company']
-		phone_number = request.POST['phone_number']
-		email = request.POST['email']
-		#file = request.FILES['file']
-		#post_request = Request(title=title, contents=contents, company=company, phone_number=phone_number, email=email, video_contents=file)
-		post_request = Request(budget=budget, contents=contents, company=company, phone_number=phone_number, email=email)
-		post_request.save()
-		return HttpResponseRedirect('/')
+def send(request):
+	if request.method == "GET":
+		devid = request.GET["devid"]
+		time = request.GET["time"]
+		print("time : "+str(time))
 	else:
 		return render(request, 'management/data.html')
+
+def data(request):
+	return render(request, 'management/data.html')
 
 def test(request):
 	return render(request, 'management/test.html', {})
