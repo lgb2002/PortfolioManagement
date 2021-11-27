@@ -27,7 +27,7 @@ def data(request):
 		post_request.save()
 		return HttpResponseRedirect('/')
 	else:
-		return render(request, 'data.html')
+		return render(request, 'management/data.html')
 
 def test(request):
 	return render(request, 'management/test.html', {})
