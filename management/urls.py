@@ -12,6 +12,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 	path('admin/', views.admin, name='admin'),
 	path('portfolio/', views.portfolio, name='portfolio'),
+	path('send/', views.send, name='send'),
 	path('data/', views.data, name='data'),
 	path('test/', views.test, name='test'),
 	path('test2/', views.test2, name='test2'),
