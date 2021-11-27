@@ -1,7 +1,10 @@
 {% extends 'management/base.html' %}
 {% load static %}
 {% block content %}
+
+
 <div class="page">
+{% if user.is_authenticated %}
   <div class="pt-24">
     <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="input-contact">
       <div class="flex flex-col w-full md:w-2/5 justify-center items-start md:text-left">
@@ -68,6 +71,17 @@
     </div>
     </div>
   </div>
+</div>
+{% else %}
+
+<div class="pt-24">
+<div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+<section class="container mx-auto text-center py-6 mb-12">
+  <h3 class="my-4 text-3xl leading-tight">로그인해야 볼 수 있습니다.</h3>
+</section>
+</div>
+</div>
+{% endif %}
 </div>
 {% endblock %}
 
