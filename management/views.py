@@ -19,7 +19,7 @@ def send(request):
 		data = {
             "result": "success"
         }
-		return JsonResponse("success")
+		return JsonResponse(data)
 	else:
 		return render(request, 'management/data.html')
 
